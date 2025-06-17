@@ -1,0 +1,10 @@
+[
+  {
+    "Id": 1,
+    "Name": "emp1",
+    "Salary": 45000.00,
+    "Email": "emp1@gmail.com",
+    "Department": "IT",
+    "Location": "Hyderabad"
+  }
+]

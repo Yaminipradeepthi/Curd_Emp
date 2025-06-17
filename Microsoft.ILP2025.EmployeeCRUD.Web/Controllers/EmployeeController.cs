@@ -2,30 +2,107 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.ILP2025.EmployeeCRUD.Repositores;
 using Microsoft.ILP2025.EmployeeCRUD.Servcies;
+using Microsoft.ILP2025.EmployeeCRUD.Entities;
+
+
 
 namespace Microsoft.ILP2025.EmployeeCRUD.Web.Controllers
 {
     public class EmployeeController : Controller
     {
-        public IEmployeeService employeeService { get; set; }
+         private readonly IEmployeeService employeeService;
 
-        public EmployeeController(IEmployeeService employeeService)
+    public EmployeeController(IEmployeeService employeeService)
+    {
+        this.employeeService = employeeService;
+    }
+
+    public async Task<IActionResult> Index()
+    {
+        var employees = await employeeService.GetAllEmployees();
+        return View(employees);
+    }
+
+    public async Task<IActionResult> Details(int id)
+    {
+        var employee = await employeeService.GetEmployee(id);
+        return View(employee);
+    }
+
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(EmployeeEntity employee)
+    {
+        if (ModelState.IsValid)
         {
-            this.employeeService = employeeService;
+            await employeeService.CreateEmployee(employee);
+            return RedirectToAction(nameof(Index));
         }
+        return View(employee);
+    }
 
-        // GET: EmployeeController
-        public async Task<ActionResult> Index()
+    public async Task<IActionResult> Edit(int id)
+    {
+        var employee = await employeeService.GetEmployee(id);
+        return View(employee);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit(EmployeeEntity employee)
+    {
+        if (ModelState.IsValid)
         {
-            var employees = await this.employeeService.GetAllEmployees();
-            return View(employees);
+            await employeeService.UpdateEmployee(employee);
+            return RedirectToAction(nameof(Index));
         }
+        return View(employee);
+    }
 
-        // GET: EmployeeController/Details/5
-        public async Task<ActionResult> Details(int id)
-        {
-            var employee = await this.employeeService.GetEmployee(id);
-            return View(employee);
-        }      
+    public async Task<IActionResult> Delete(int id)
+    {
+        var employee = await employeeService.GetEmployee(id);
+        if(employee==null){
+            return NotFound();
+        }
+        return View(employee);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(int id)
+    {
+        await employeeService.DeleteEmployee(id);
+        return RedirectToAction(nameof(Index));
+    }
+        
+        
+        
+        
+        
+        
+        // public IEmployeeService employeeService { get; set; }
+
+        // public EmployeeController(IEmployeeService employeeService)
+        // {
+        //     this.employeeService = employeeService;
+        // }
+
+        // // GET: EmployeeController
+        // public async Task<ActionResult> Index()
+        // {
+        //     var employees = await this.employeeService.GetAllEmployees();
+        //     return View(employees);
+        // }
+
+        // // GET: EmployeeController/Details/5
+        // public async Task<ActionResult> Details(int id)
+        // {
+        //     var employee = await this.employeeService.GetEmployee(id);
+        //     return View(employee);
+        // }      
     }
 }

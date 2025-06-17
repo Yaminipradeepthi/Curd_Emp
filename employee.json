@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "Name": "John",
+    "Salary": 60000,
+    "Email": "John@example.com",
+    "Department": "IT",
+    "Location": "Pune"
+
+  },
+  {
+    "Id": 2,
+    "Name": "sita",
+    "Salary": 50000,
+    "Email": "sita@example.com",
+    "Department": "HR",
+    "Location": "Hyd"
+
+  },
+  {
+    "Id": 3,
+    "Name": "amita",
+    "Salary": 35000,
+    "Email": "amita@example.com",
+    "Department": "Finance",
+    "Location": "Chennai"
+
+  }
+]

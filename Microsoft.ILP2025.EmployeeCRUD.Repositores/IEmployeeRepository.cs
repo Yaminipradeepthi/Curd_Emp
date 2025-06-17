@@ -7,10 +7,25 @@ using System.Threading.Tasks;
 
 namespace Microsoft.ILP2025.EmployeeCRUD.Repositores
 {
-    public interface IEmployeeRepository
-    {
-        Task<EmployeeEntity> GetEmployee(int id);
+   public interface IEmployeeRepository
+{
+    Task<EmployeeEntity> GetEmployee(int id);
+    Task<List<EmployeeEntity>> GetAllEmployees();
+    Task CreateEmployee(EmployeeEntity employee);
+    Task UpdateEmployee(EmployeeEntity employee);
+    Task DeleteEmployee(int id);
+}
 
-        Task<List<EmployeeEntity>> GetAllEmployees();
-    }
+
+
+
+
+
+
+    // public interface IEmployeeRepository
+    // {
+    //     Task<EmployeeEntity> GetEmployee(int id);
+
+    //     Task<List<EmployeeEntity>> GetAllEmployees();
+    // }
 }

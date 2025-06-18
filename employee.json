@@ -1,27 +1,27 @@
 [
   {
     "Id": 1,
-    "Name": "John",
-    "Salary": 60000,
-    "Email": "John@example.com",
+    "Name": "yamuuu",
+    "Salary": 80000,
+    "Email": "yamuuu@example.com",
     "Department": "IT",
-    "Location": "Pune"
+    "Location": "Hyderabad"
 
   },
   {
     "Id": 2,
-    "Name": "sita",
-    "Salary": 50000,
-    "Email": "sita@example.com",
+    "Name": "Deepuu",
+    "Salary": 60000,
+    "Email": "deepuu@example.com",
     "Department": "HR",
-    "Location": "Hyd"
+    "Location": "pune"
 
   },
   {
     "Id": 3,
-    "Name": "amita",
-    "Salary": 35000,
-    "Email": "amita@example.com",
+    "Name": "Praha",
+    "Salary": 75000,
+    "Email": "praha@example.com",
     "Department": "Finance",
     "Location": "Chennai"
 

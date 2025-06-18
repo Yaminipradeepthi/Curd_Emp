@@ -1,17 +1,17 @@
 [
   {
     "Id": 1,
-    "Name": "Hari",
+    "Name": "Yamini",
     "Salary": 45000.00,
-    "Email": "harika@gmail.com",
+    "Email": "yamini@gmail.com",
     "Department": "IT",
     "Location": "Hyd"
   },
   {
     "Id": 2,
-    "Name": "company1",
+    "Name": "Deepika",
     "Salary": 45000.00,
-    "Email": "new@gmail.com",
+    "Email": "deepika@gmail.com",
     "Department": "IT",
     "Location": "Kolkata"
   }

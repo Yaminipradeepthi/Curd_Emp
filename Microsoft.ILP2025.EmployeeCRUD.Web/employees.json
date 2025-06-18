@@ -1,7 +1,7 @@
 [
   {
     "Id": 1,
-    "Name": "emp1",
+    "Name": "employee1",
     "Salary": 45000.00,
     "Email": "emp1@gmail.com",
     "Department": "IT",
